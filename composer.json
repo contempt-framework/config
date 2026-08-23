@@ -1,0 +1,46 @@
+{
+    "name": "contempt/config",
+    "description": "Typed configuration objects, layered configuration providers and deterministic precedence.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/contempt-framework/config",
+    "require": {
+        "contempt/contracts": "self.version",
+        "contempt/core": "self.version",
+        "php": "^8.5",
+        "symfony/dotenv": "^8.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpunit/phpunit": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Contempt\\Config\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Contempt\\Config\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse": "phpstan analyse --memory-limit=1G --no-progress",
+        "test": "phpunit",
+        "qa": [
+            "@analyse",
+            "@test"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
